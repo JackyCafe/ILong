@@ -10,6 +10,7 @@ class UserInfoSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class CurrencyInfoSerializers(serializers.ModelSerializer):
     class Meta:
         model = CurrencyInfo

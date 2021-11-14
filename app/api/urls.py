@@ -19,24 +19,19 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 import app
-
-
-#
-# router = DefaultRouter()
-# router.register(r'userinfo',UserInfoAPIView)
-# router.register(r'CurrencyInfo',CurrencyInfoViewSet)
-# router.register(r'PlantInfo',PlantInfoViewSet)
-# router.register(r'IrrIgationInfo',IrrIgationInfoViewSet)
-# router.register(r'EcologyInfo',EcologyInfoViewSet)
-# router.register(r'PlantingHistory',PlantingHistoryViewSet)
-# router.register(r'Questionnaire',QuestionnaireViewSet)
-# router.register(r'Daily',DailyViewSet)
-# router.register(r'Other',OtherViewSet)
-
+from app.views import PlantInfoAPIView, IrrIgationInfoAPIView, QuestionAPIView, \
+    UserInfoAPIView, CurrencyInfoAPIView, EcologyInfoAPIView, \
+    PlantHistoryAPIView, DailyAPIView, OtherAPIView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/',include('app.api.urls')),
-
+    path(r'userinfo/', UserInfoAPIView.as_view()),
+    path(r'currencyinfo/', CurrencyInfoAPIView.as_view()),
+    path(r'plantinfo/', PlantInfoAPIView.as_view()),
+    path(r'irrigationinfo/', IrrIgationInfoAPIView.as_view()),
+    path(r'ecologyinfo/', EcologyInfoAPIView.as_view()),
+    path(r'plantHistory/', PlantHistoryAPIView.as_view()),
+    path(r'question/', QuestionAPIView.as_view()),
+    path(r'daily/', DailyAPIView.as_view()),
+    path(r'other/', OtherAPIView.as_view()),
 
 ]
